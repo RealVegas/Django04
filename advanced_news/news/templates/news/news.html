@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+Новости
+{% endblock %}
+
+{% block content %}
+    {% include 'main/nav-bar.html' with news=option %}
+    <div class="container-fluid">
+    <p class="page-title">Все новости</p>
+    </div>
+    {% if news %}
+        <hr>
+        {% for item in news %}
+            <div class="container">
+                <div class="quote-container text-center">
+                    <h3 class="mb-4">{{ item.n_title }}</h3>
+                    <h5 class="mb-4">{{ item.n_desc }}</h5>
+                    <p class="quote-text">{{ item.n_text }}</p>
+                    <p class="quote-author"><em>{{ item.n_author}} | {{ item.n_date }}</em></p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="news-title">Новостей нет</p>
+    {% endif %}
+
+{% endblock %}

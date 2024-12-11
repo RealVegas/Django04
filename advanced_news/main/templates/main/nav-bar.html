@@ -1,0 +1,15 @@
+    <nav class="navbar navbar-expand-sm" style="background-color: #505050;" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Панель навигации</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link {{main}}" aria-current="page" href="{% url 'index' %}">Главная страница</a>
+                    <a class="nav-link {{news}}" aria-current="page" href="{% url 'news_home' %}">Новости</a>
+                    <a class="nav-link" aria-current="page" href="/admin">Администрирование</a>
+                </div>
+            </div>
+        </div>
+    </nav>
