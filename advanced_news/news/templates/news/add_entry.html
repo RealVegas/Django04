@@ -1,0 +1,41 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+Добавить новость
+{% endblock %}
+
+{% block content %}
+    {% include 'main/nav-bar.html' with add_news=option %}
+    <div class="container-fluid">
+    <p class="page-title">Добавить новость</p>
+
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-header">
+                    Форма для добавления новости
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ form.n_title }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.n_desc }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.n_text }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.n_author }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.n_date }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Добавить новость</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
